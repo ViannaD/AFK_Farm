@@ -14,13 +14,13 @@ public final class ModBlockEntities {
     // IMPORTANT: ModBlocks must be loaded before this class (AfkFarmsMod.onInitialize() enforces
     // that order) so that ModBlocks.WHEAT_FARM already exists here.
     //
-    // The field declaration and its assignment are split on purpose: javac treats a simple
-    // reference to a static final field *inside its own variable-initializer expression* as an
-    // illegal forward reference, even inside a lambda that only runs later ("self-reference in
-    // initializer"). Moving the assignment into a static initializer block (a separate statement,
-    // not the field's initializer) sidesteps that rule - by the time the lambda actually runs
-    // (when a block entity is created), WHEAT_FARM is already assigned.
-    public static final BlockEntityType<FarmBlockEntity> WHEAT_FARM;
+    // This field is intentionally NOT `final`. A blank `final` field must be provably
+    // definitely-assigned at every point it's read, and javac enforces that even for a read
+    // inside a lambda that will only actually run later (when a block entity is created) -
+    // so a final field here fails to compile with "variable WHEAT_FARM might not have been
+    // initialized", even from inside its own static initializer block. Dropping `final` removes
+    // that compile-time check; it's still only assigned once, right here.
+    public static BlockEntityType<FarmBlockEntity> WHEAT_FARM;
 
     static {
         WHEAT_FARM = register("wheat_farm",
