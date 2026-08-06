@@ -69,7 +69,7 @@ public class WheatFarmModel extends Model {
         m_root.addChild("root_c9", m_root_c9_b, ModelTransform.of(16.0000f, -0.4231f, -10.4615f, -1.570796f, 0.000000f, 0.000000f));
         // bone: mill
         ModelPartBuilder m_mill_b = ModelPartBuilder.create();
-        ModelPartData m_mill = p_root.addChild("mill", m_mill_b, ModelTransform.of(-0.0000f, 6.6769f, 19.5685f, 0.000000f, 0.000000f, 0.000000f));
+        ModelPartData m_mill = m_root.addChild("mill", m_mill_b, ModelTransform.of(-0.0000f, 6.6769f, 19.5685f, 0.000000f, 0.000000f, 0.000000f));
         ModelPartBuilder m_mill_c0_b = ModelPartBuilder.create().uv(0, 155).cuboid(-0.0000f, 11.0000f, -17.0000f, 2.0000f, 2.0000f, 44.0000f, new Dilation(0f));
         m_mill.addChild("mill_c0", m_mill_c0_b, ModelTransform.of(5.0000f, -12.0000f, -1.0300f, 0.000000f, -1.570796f, 0.000000f));
         ModelPartBuilder m_mill_c1_b = ModelPartBuilder.create().uv(126, 264).cuboid(-4.0000f, 7.0000f, 25.0000f, 10.0000f, 10.0000f, 2.0000f, new Dilation(0f));
@@ -122,7 +122,7 @@ public class WheatFarmModel extends Model {
         m_mill.addChild("mill_c24", m_mill_c24_b, ModelTransform.of(-1.0000f, -5.5000f, -2.5300f, 0.000000f, 1.570796f, 3.141593f));
         // bone: line_1
         ModelPartBuilder m_line_1_b = ModelPartBuilder.create();
-        ModelPartData m_line_1 = p_root.addChild("line_1", m_line_1_b, ModelTransform.of(16.2500f, 3.3269f, -10.9615f, 0.000000f, 0.000000f, 0.000000f));
+        ModelPartData m_line_1 = m_root.addChild("line_1", m_line_1_b, ModelTransform.of(16.2500f, 3.3269f, -10.9615f, 0.000000f, 0.000000f, 0.000000f));
         // bone: crop_1
         ModelPartBuilder m_crop_1_b = ModelPartBuilder.create();
         ModelPartData m_crop_1 = m_line_1.addChild("crop_1", m_crop_1_b, ModelTransform.of(-1.7500f, 1.0000f, 1.5000f, 0.000000f, 0.000000f, 0.000000f));
@@ -242,7 +242,7 @@ public class WheatFarmModel extends Model {
         m_stage_4_crop_3.addChild("stage_4_crop_3_c1", m_stage_4_crop_3_c1_b, ModelTransform.of(4.0000f, 4.2500f, 0.0000f, 0.000000f, -1.570796f, 0.000000f));
         // bone: line_2
         ModelPartBuilder m_line_2_b = ModelPartBuilder.create();
-        ModelPartData m_line_2 = p_root.addChild("line_2", m_line_2_b, ModelTransform.of(16.2500f, 3.3269f, 3.5385f, 0.000000f, 0.000000f, 0.000000f));
+        ModelPartData m_line_2 = m_root.addChild("line_2", m_line_2_b, ModelTransform.of(16.2500f, 3.3269f, 3.5385f, 0.000000f, 0.000000f, 0.000000f));
         // bone: crop_4
         ModelPartBuilder m_crop_4_b = ModelPartBuilder.create();
         ModelPartData m_crop_4 = m_line_2.addChild("crop_4", m_crop_4_b, ModelTransform.of(-1.7500f, 1.0000f, 1.5000f, 0.000000f, 0.000000f, 0.000000f));
@@ -373,7 +373,7 @@ public class WheatFarmModel extends Model {
         m_cage_b.uv(0, 0).cuboid(21.0000f, -3.0000f, 21.0000f, 3.0000f, 42.0000f, 3.0000f, new Dilation(0f));
         m_cage_b.uv(0, 0).cuboid(-21.0000f, 36.0000f, 21.0000f, 42.0000f, 3.0000f, 3.0000f, new Dilation(0f));
         m_cage_b.uv(0, 0).cuboid(-24.0000f, -3.0000f, 21.0000f, 3.0000f, 42.0000f, 3.0000f, new Dilation(0f));
-        ModelPartData m_cage = p_root.addChild("cage", m_cage_b, ModelTransform.of(-0.0000f, 2.3269f, 5.5385f, 0.000000f, 0.000000f, 0.000000f));
+        ModelPartData m_cage = m_root.addChild("cage", m_cage_b, ModelTransform.of(-0.0000f, 2.3269f, 5.5385f, 0.000000f, 0.000000f, 0.000000f));
         ModelPartBuilder m_cage_c0_b = ModelPartBuilder.create().uv(0, 0).cuboid(8.0000f, 31.0000f, 8.0000f, 16.0000f, 8.0000f, 16.0000f, new Dilation(0f));
         m_cage.addChild("cage_c0", m_cage_c0_b, ModelTransform.of(-5.0000f, 0.0000f, 8.0000f, 0.000000f, 1.570796f, 0.000000f));
         ModelPartBuilder m_cage_c1_b = ModelPartBuilder.create().uv(0, 0).cuboid(8.0000f, 31.0000f, 8.0000f, 16.0000f, 8.0000f, 16.0000f, new Dilation(0f));
