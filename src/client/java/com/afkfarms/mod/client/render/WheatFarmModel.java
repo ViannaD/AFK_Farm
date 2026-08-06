@@ -27,7 +27,7 @@ public class WheatFarmModel extends Model {
     private final ModelPart[][] cropStages = new ModelPart[6][4];
 
     public WheatFarmModel(ModelPart root) {
-        super(root, net.minecraft.client.render.RenderLayer::getEntityCutout);
+        super(net.minecraft.client.render.RenderLayer::getEntityCutout);
         this.root = root.getChild("root");
         this.mill = this.root.getChild("mill");
         for (int row = 1; row <= 6; row++) {
