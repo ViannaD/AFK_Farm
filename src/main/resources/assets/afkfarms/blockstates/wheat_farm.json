@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "facing=north": { "model": "afkfarms:block/empty" },
+    "facing=south": { "model": "afkfarms:block/empty" },
+    "facing=east": { "model": "afkfarms:block/empty" },
+    "facing=west": { "model": "afkfarms:block/empty" }
+  }
+}

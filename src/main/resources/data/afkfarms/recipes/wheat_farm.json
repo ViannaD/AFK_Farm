@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "afkfarms_farms",
+  "ingredients": [
+    { "item": "minecraft:dispenser" },
+    { "item": "minecraft:bone_meal" },
+    { "item": "minecraft:bone_meal" },
+    { "item": "minecraft:wheat_seeds" },
+    { "item": "minecraft:wheat_seeds" },
+    { "item": "minecraft:iron_ingot" },
+    { "item": "minecraft:dirt" },
+    { "item": "minecraft:dirt" },
+    { "item": "minecraft:oak_slab" }
+  ],
+  "result": {
+    "id": "afkfarms:wheat_farm",
+    "count": 1
+  }
+}

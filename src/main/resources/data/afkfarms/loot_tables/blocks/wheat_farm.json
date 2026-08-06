@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "afkfarms:wheat_farm",
+          "functions": [
+            {
+              "function": "minecraft:copy_block_entity_data"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+{
+  "block.afkfarms.wheat_farm": "Fazenda de Trigo",
+  "item.afkfarms.wheat_farm": "Fazenda de Trigo",
+  "container.afkfarms.farm": "Fazenda AFK",
+  "itemGroup.afkfarms.farms": "AFK Farms",
+  "afkfarms.farm.out_of_fuel": "Sem combustível"
+}

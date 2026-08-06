@@ -1,0 +1,7 @@
+{
+  "block.afkfarms.wheat_farm": "Wheat Farm",
+  "item.afkfarms.wheat_farm": "Wheat Farm",
+  "container.afkfarms.farm": "AFK Farm",
+  "itemGroup.afkfarms.farms": "AFK Farms",
+  "afkfarms.farm.out_of_fuel": "Out of fuel"
+}

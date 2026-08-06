@@ -1,0 +1,23 @@
+{
+	"schemaVersion": 1,
+	"id": "afkfarms",
+	"version": "${version}",
+	"name": "AFK Farms",
+	"description": "Java/Fabric port of the Bedrock 'AFK Farms Add-On': automated, fuel-powered farm machines that passively generate resources over time, even while offline.",
+	"authors": ["Original addon: ldz_241216 (Bedrock) - Fabric port"],
+	"contact": {},
+	"license": "MIT",
+	"icon": "assets/afkfarms/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": ["com.afkfarms.mod.AfkFarmsMod"],
+		"client": ["com.afkfarms.mod.client.AfkFarmsModClient"]
+	},
+	"mixins": [],
+	"depends": {
+		"fabricloader": ">=0.16.9",
+		"fabric-api": "*",
+		"minecraft": "~1.21.1",
+		"java": ">=21"
+	}
+}
