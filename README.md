@@ -26,11 +26,25 @@ abaixo).
    de uma instância Fabric 1.21.1 (com [Fabric Loader](https://fabricmc.net/use/) e
    [Fabric API](https://modrinth.com/mod/fabric-api) instalados).
 
-> Nota: faltam os arquivos `gradlew` / `gradlew.bat` / `gradle/wrapper/*` (o wrapper
-> do Gradle) porque baixá-los também exige acesso à internet que não tenho aqui. Rode
-> `gradle wrapper --gradle-version 8.8` uma vez (com o Gradle instalado localmente) na
-> raiz do projeto para gerá-los, ou abra o projeto direto no IntelliJ com suporte a
-> Loom, que resolve isso sozinho.
+## CI (GitHub Actions)
+
+O repositório já vem com `.github/workflows/build.yml`: builda automaticamente em
+todo push/PR para `main`/`master`, e disponibiliza o `.jar` gerado como artifact do
+workflow (aba "Actions" → o run → "Artifacts"). Como o `gradle-wrapper.jar` não está
+commitado (ver nota acima), o workflow instala o Gradle 8.8 diretamente via
+`gradle/actions/setup-gradle` em vez de depender do `./gradlew`. Depois que você
+gerar o wrapper localmente e commitar o jar, pode trocar o step de build do workflow
+de volta para `./gradlew build` se preferir.
+
+> Nota: incluí os scripts `gradlew` / `gradlew.bat` (são só texto, sem problema), mas
+> **falta o `gradle/wrapper/gradle-wrapper.jar`** — esse é um binário compilado que
+> preciso baixar do servidor da Gradle, e meu sandbox não tem acesso a esse domínio.
+> Rode `gradle wrapper --gradle-version 8.8` uma vez (com o Gradle instalado
+> localmente) na raiz do projeto para gerá-lo, ou abra o projeto direto no IntelliJ
+> com suporte a Loom, que resolve isso sozinho. O workflow do GitHub Actions
+> (`.github/workflows/build.yml`) já contorna isso: ele instala o Gradle diretamente
+> e roda `gradle build` em vez de `./gradlew build`, então o CI funciona mesmo sem o
+> jar do wrapper no repositório.
 
 ## O que foi convertido e como
 

@@ -5,8 +5,6 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroups;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
-import net.minecraft.registry.RegistryKey;
-import net.minecraft.registry.RegistryKeys;
 import net.minecraft.util.Identifier;
 
 /**
@@ -23,14 +21,10 @@ public final class ModItems {
     }
 
     public static final Item WHEAT_FARM_BLUEPRINT = register("wheat_farm",
-            key -> new BlockItem(ModBlocks.WHEAT_FARM, new Item.Settings()
-                    .useBlockPrefixedTranslationKey()
-                    .maxCount(64)
-                    .registryKey(key)));
+            new BlockItem(ModBlocks.WHEAT_FARM, new Item.Settings().maxCount(64)));
 
-    private static <T extends Item> T register(String path, java.util.function.Function<RegistryKey<Item>, T> factory) {
-        RegistryKey<Item> key = RegistryKey.of(RegistryKeys.ITEM, Identifier.of("afkfarms", path));
-        return Registry.register(Registries.ITEM, key, factory.apply(key));
+    private static <T extends Item> T register(String path, T item) {
+        return Registry.register(Registries.ITEM, Identifier.of("afkfarms", path), item);
     }
 
     public static void init() {

@@ -13,10 +13,10 @@ import net.minecraft.block.entity.BlockEntityType;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.state.StateManager;
 import net.minecraft.state.property.EnumProperty;
-import net.minecraft.util.ActionResult;
 import net.minecraft.util.BlockMirror;
 import net.minecraft.util.BlockRotation;
 import net.minecraft.util.Hand;
+import net.minecraft.util.ItemActionResult;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
@@ -105,28 +105,28 @@ public class FarmBlock extends Block implements BlockEntityProvider {
     }
 
     @Override
-    protected ActionResult onUseWithItem(net.minecraft.item.ItemStack stack, BlockState state, World world, BlockPos pos,
-                                          PlayerEntity player, Hand hand, BlockHitResult hit) {
-        if (hand != Hand.MAIN_HAND) return ActionResult.PASS;
+    protected ItemActionResult onUseWithItem(net.minecraft.item.ItemStack stack, BlockState state, World world, BlockPos pos,
+                                              PlayerEntity player, Hand hand, BlockHitResult hit) {
+        if (hand != Hand.MAIN_HAND) return ItemActionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
         if (world.getBlockEntity(pos) instanceof FarmBlockEntity be) {
             if (!world.isClient) {
                 if (be.onPlayerUse(player, stack)) {
-                    return ActionResult.SUCCESS;
+                    return ItemActionResult.SUCCESS;
                 }
                 if (player instanceof net.minecraft.server.network.ServerPlayerEntity serverPlayer) {
                     serverPlayer.openHandledScreen(be);
                 }
             }
-            return ActionResult.SUCCESS;
+            return ItemActionResult.SUCCESS;
         }
-        return ActionResult.PASS;
+        return ItemActionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
     }
 
     @Override
     protected void onStateReplaced(BlockState state, World world, BlockPos pos, BlockState newState, boolean moved) {
         if (!state.isOf(newState.getBlock())) {
             if (world.getBlockEntity(pos) instanceof FarmBlockEntity be) {
-                net.minecraft.inventory.ItemScatterer.spawn(world, pos, be);
+                net.minecraft.util.ItemScatterer.spawn(world, pos, be);
             }
         }
         super.onStateReplaced(state, world, pos, newState, moved);
